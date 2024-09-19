@@ -1,7 +1,7 @@
 import numpy as np
 
 class LinearRegression:
-    def __init__(self):
+    def __init__(self) -> None:
         self.w = None
         self.b = None
         self.m = None
@@ -11,12 +11,12 @@ class LinearRegression:
         return np.dot(self.w, x) + self.b
 
     def compute_cost(self, X, y):
-        err = 0
+        total_error = 0
         for i in range(self.m):
-            err += np.square(self.predict(X[i]) - y[i])
-        err = err / (2*self.m)
+            total_error += np.square(self.predict(X[i]) - y[i])
+        total_error = total_error / (2*self.m)
 
-        return err
+        return total_error
 
     def compute_gradient(self, X, y):
         dj_db = 0

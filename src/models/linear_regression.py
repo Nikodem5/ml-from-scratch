@@ -48,5 +48,5 @@ class LinearRegression:
     def fit(self, X, y, alpha=0.01, iters=10, info=False):
         self.m, self.n = X.shape
         self.w = np.random.rand(self.n)
-        self.b = 100
+        self.b = np.random.randint(1, 10)
         self.w, self.b = self.gradient_descent(X, y, alpha, iters, info)

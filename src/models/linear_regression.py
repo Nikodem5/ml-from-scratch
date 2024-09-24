@@ -36,8 +36,9 @@ class LinearRegression:
             self.w = w_tmp
             self.b = b_tmp
 
-            if i % (iters//10) == 0 and info:
-                print(f'iteration: {i} cost: {self._compute_cost(X, y, y_pred)}')
+            if info and (i % (iters//10) == 0 or i + 1 == iters):
+                cost = self._compute_cost(X, y, y_pred)
+                print(f'iteration: {i} cost: {cost}')
 
         return self.w, self.b
 

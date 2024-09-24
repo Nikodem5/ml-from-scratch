@@ -17,11 +17,10 @@ class LinearRegression:
         return cost
 
     def _compute_gradient(self, X, y, y_pred):
-        dj_db = 0
+        dj_db = np.sum(y_pred - y)
         dj_dw = np.zeros(self.n)
 
         for i in range(self.m):
-            dj_db += y_pred[i] - y[i]
             for j in range(self.n):
                 dj_dw[j] += (y_pred[i] - y[i]) * X[i][j]
         dj_db = dj_db / self.m

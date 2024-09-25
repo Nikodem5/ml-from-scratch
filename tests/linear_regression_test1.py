@@ -1,6 +1,6 @@
+import numpy as np
 from src.models.linear_regression import LinearRegression
 from sklearn.linear_model import LinearRegression as sklearnLinearRegression
-import numpy as np
 import time
 
 X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])

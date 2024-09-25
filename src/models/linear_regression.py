@@ -1,4 +1,5 @@
 import numpy as np
+from ..utils.z_score_normalization import ZScoreScaler
 
 class LinearRegression:
     def __init__(self) -> None:
@@ -42,7 +43,7 @@ class LinearRegression:
 
         return self.w, self.b
 
-    def fit(self, X, y, alpha=0.01, iters=10, info=False):
+    def fit(self, X, y, alpha=0.01, iters=10, info=False, normalization=True):
         self.m, self.n = X.shape
         self.w = np.random.rand(self.n)
         self.b = np.random.randint(1, 10)

@@ -10,7 +10,7 @@ class LinearRegression:
         self.m = None
         self.n = None
         self.normalization = normalization
-        self.scaler = ZScoreScaler if normalization else None
+        self.scaler = ZScoreScaler() if normalization else None
 
     def predict(self, X):
         return np.dot(X, self.w) + self.b
@@ -61,5 +61,9 @@ class LinearRegression:
         self.m, self.n = X.shape
         self.w = np.random.rand(self.n)
         self.b = np.random.randint(1, 10)
+
+        if self.normalization:
+            X = self.scaler.fit_transform(X)
+            y = self.scaler.fit_transform(y)
         
         self.w, self.b = self.gradient_descent(X, y, alpha, epsilon, iters, patience, info)

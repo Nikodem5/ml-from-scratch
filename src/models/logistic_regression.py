@@ -15,8 +15,12 @@ class LogisticRegression:
         z = np.dot(X, self.w) + self.b
         return sigmoid(z)
     
-    def _compute_cost(self):
-        pass
+    def _compute_cost(self, y, y_pred):
+        epsilon = 1e-15
+        cost = np.sum((y * np.log(y_pred + epsilon)) + ((1 - y) * np.log(1 - y_pred + epsilon)))
+        cost = -1 * (cost / self.m)
+
+        return cost
 
     def _compute_gradient(self):
         pass

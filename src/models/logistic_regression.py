@@ -22,8 +22,15 @@ class LogisticRegression:
 
         return cost
 
-    def _compute_gradient(self):
-        pass
+    def _compute_gradient(self, X, y, y_pred):
+        diff_ = y_pred - y
+        dj_db = np.sum(diff_)
+        dj_dw = np.dot(X.T, diff_)
+
+        dj_db = dj_db / self.m
+        dj_dw = dj_dw / self.m
+
+        return dj_dw, dj_db
 
     def gradient_descent(self):
         pass

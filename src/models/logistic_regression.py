@@ -17,7 +17,8 @@ class LogisticRegression:
     
     def _compute_cost(self, y, y_pred):
         epsilon = 1e-15
-        cost = np.sum((y * np.log(y_pred + epsilon)) + ((1 - y) * np.log(1 - y_pred + epsilon)))
+        y_pred = np.clip(y_pred, epsilon, 1 - epsilon)
+        cost = np.sum((y * np.log(y_pred)) + ((1 - y) * np.log(1 - y_pred)))
         cost = -1 * (cost / self.m)
 
         return cost
@@ -64,4 +65,4 @@ class LogisticRegression:
         self.w = np.random.rand(self.n)
         self.b = np.random.randint(1, 10)
 
-        #TODO gradient and the rest
+        self.w, self.b = self.gradient_descent(X, y, alpha, epsilon, iters, patience, info)

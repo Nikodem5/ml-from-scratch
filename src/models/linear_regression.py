@@ -1,7 +1,7 @@
 import numpy as np
 from ..utils.z_score_normalization import ZScoreScaler
 
-#TODO regularization, normalization, early stopping, adaptive alpha
+#TODO regularization, adaptive alpha
 
 class LinearRegression:
     def __init__(self, normalization=False) -> None:

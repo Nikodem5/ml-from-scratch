@@ -4,7 +4,7 @@ Implementing ML stuff from scratch with some help from numpy
 Stuff to do (I will regularly update this list):
 - Linear Regression 
 - Logistic Regression 
-- K-Nearest Neighbour
+- K-Nearest Neighbors
 - Decision Tree
 - Random Forest
 - K-Means

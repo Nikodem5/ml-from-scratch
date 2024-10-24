@@ -10,6 +10,8 @@ class k_nearest_neighbors():
         dist = np.sqrt(sum_) 
         return dist
     
+    
+    
 if __name__ == '__main__':
     knn = k_nearest_neighbors()
 

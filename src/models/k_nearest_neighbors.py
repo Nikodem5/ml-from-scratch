@@ -1,16 +1,15 @@
 import numpy as np
 
 class k_nearest_neighbors():
-    def __init__(self):
+    def __init__(self, k):
         self.m = None
         self.n = None
+        self.k = k
 
     def euclidean_distance(self, p, q):
         sum_ = np. sum(np.square(p - q))
         dist = np.sqrt(sum_) 
         return dist
-    
-    
     
 if __name__ == '__main__':
     knn = k_nearest_neighbors()
